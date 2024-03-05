@@ -172,23 +172,5 @@ class Domino():
             self.jugarFicha(i, lado)
             self.siguienteTurno()
 
-    def siguienteMovimiento2(self, max_time = 10):
-        
-        self.time_start = time.time()
-        
-        self.max_time = max_time
-         
-        for depth in range(2, 10000):
-             
-            try:
-               _ , mejor_jugada, _ = self.min_max(self.jugadorActual, depth, -np.inf, np.inf)
-            except StopIteration:
-                break
- 
-        if mejor_jugada:
-            i, lado = mejor_jugada
-            self.jugarFicha(i, lado)
-            self.siguienteTurno()
-            
 
 
